@@ -2,66 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <title>Employee Search</title>
-
-    <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee API</title>
+    <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Handlebars -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 </head>
-
-<body>
-<div class="container mt-5 pastel-card">
-
-    <h2 class="text-center mb-4">Employee Search</h2>
-
-    <!-- Search by name -->
-    <div class="mb-4">
-        <label class="form-label">Search by name</label>
-        <input type="text" id="nameQuery" class="form-control mb-2">
-        <button type="button"
-                class="btn btn-pastel"
-                data-querytype="by_name"
-                onclick="updateView(this)">
-            Query
-        </button>
+<body class="bg-pastel">
+    <div class="container mt-5">
+        <h1 class="text-center pastel-text">Employee Directory</h1>
+        <div class="mb-3">
+            <input type="text" id="nameQuery" class="form-control" placeholder="Search by name">
+            <button class="btn btn-pastel mt-2" onclick="searchByName()">Search</button>
+        </div>
+        <div id="employeeList" class="mt-4"></div>
     </div>
 
-    <hr>
-
-    <!-- Search by age -->
-    <div class="mb-4">
-        <label class="form-label">Search by age</label>
-        <input type="number" id="startAgeQuery" class="form-control mb-2" value="1">
-        <input type="number" id="endAgeQuery" class="form-control mb-2" value="99">
-        <button type="button"
-                class="btn btn-pastel"
-                data-querytype="by_age"
-                onclick="updateView(this)">
-            Query
-        </button>
-    </div>
-
-    <div id="results"></div>
-</div>
-
-<!-- Handlebars template -->
-<script id="show_results_view" type="text/x-handlebars-template">
-    <ul class="list-group mt-4">
-        {{#each employees}}
-            <li class="list-group-item">
-                <strong>{{employee_name}}</strong><br>
-                Age: {{employee_age}} | Salary: {{employee_salary}}
-            </li>
-        {{/each}}
-    </ul>
-</script>
-
-<script src="app_code_dev.js"></script>
+    <script src="app_code_dev.js"></script>
 </body>
 </html>
+
