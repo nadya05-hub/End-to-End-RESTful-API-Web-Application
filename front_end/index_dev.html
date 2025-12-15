@@ -3,21 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee API</title>
-    <!-- Bootstrap CDN -->
+    <title>Employee Directory</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-pastel">
+<body>
     <div class="container mt-5">
-        <h1 class="text-center pastel-text">Employee Directory</h1>
+        <h1 class="text-center mb-4">Employee Directory</h1>
+        
+        <!-- Search by Name -->
         <div class="mb-3">
-            <input type="text" id="nameQuery" class="form-control" placeholder="Search by name">
-            <button class="btn btn-pastel mt-2" onclick="searchByName()">Search</button>
+            <input type="text" id="searchName" class="form-control" placeholder="Search by name...">
         </div>
-        <div id="employeeList" class="mt-4"></div>
+
+        <!-- Search by Age -->
+        <div class="mb-3 d-flex gap-2">
+            <input type="number" id="startAge" class="form-control" placeholder="Start Age">
+            <input type="number" id="endAge" class="form-control" placeholder="End Age">
+            <button id="searchAgeBtn" class="btn btn-primary">Search</button>
+        </div>
+
+        <!-- Employee Table -->
+        <table class="table table-striped table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTableBody">
+                <!-- Data will populate here -->
+            </tbody>
+        </table>
     </div>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="app_code_dev.js"></script>
 </body>
 </html>
