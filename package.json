@@ -1,0 +1,11 @@
+{
+  "name": "end-to-end-res-tful-api-web-app",
+  "version": "1.0.0",
+  "main": "restAPI_dev.js",
+  "scripts": {
+    "start": "node restAPI_dev.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
